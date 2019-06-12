@@ -18,6 +18,8 @@
 #include "z5/types/types.hxx"
 #endif
 
+#include <stdint.h>
+
 #ifdef __cplusplus
 namespace z5 {
     extern "C" {
@@ -26,17 +28,55 @@ namespace z5 {
 	
         void z5CreateGroup(char* path);
 
-        void z5CreateFloatDataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        // float 32
+        void z5CreateFloat32Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteFloat32Subarray(char *path, float *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadFloat32Subarray(char *path, float *array, unsigned int ndim, size_t *shape, size_t *offset);
 
-        void z5WriteFloatSubarray(char *path, float *array, unsigned int ndim, size_t *shape, size_t *offset);
+        // float 64 / double
+        void z5CreateFloat64Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteFloat64Subarray(char *path, double *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadFloat64Subarray(char *path, double *array, unsigned int ndim, size_t *shape, size_t *offset);
 
-        void z5ReadFloatSubarray(char *path, float *array, unsigned int ndim, size_t *shape, size_t *offset);
+        // int8_t
+        void z5CreateInt8Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteInt8Subarray(char *path, int8_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadInt8Subarray(char *path, int8_t *array, unsigned int ndim, size_t *shape, size_t *offset);
 
+        // int16_t
+        void z5CreateInt16Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteInt16Subarray(char *path, int16_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadInt16Subarray(char *path, int16_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+
+        // int32_t
+        void z5CreateInt32Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteInt32Subarray(char *path, int32_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadInt32Subarray(char *path, int32_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+
+        // int64
         void z5CreateInt64Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
-
         void z5WriteInt64Subarray(char *path, long long int *array, unsigned int ndim, size_t *shape, size_t *offset);
-
         void z5ReadInt64Subarray(char *path, long long int *array, unsigned int ndim, size_t *shape, size_t *offset);
+
+        // uint8_t
+        void z5CreateUInt8Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteUInt8Subarray(char *path, uint8_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadUInt8Subarray(char *path, uint8_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+
+        // uint16_t
+        void z5CreateUInt16Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteUInt16Subarray(char *path, uint16_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadUInt16Subarray(char *path, uint16_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+
+        // uint32_t
+        void z5CreateUInt32Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteUInt32Subarray(char *path, uint32_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadUInt32Subarray(char *path, uint32_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+
+        // uint64
+        void z5CreateUInt64Dataset(char *path, unsigned int ndim, size_t *shape, size_t *chunks, int cuseZlib, int level);
+        void z5WriteUInt64Subarray(char *path, uint64_t *array, unsigned int ndim, size_t *shape, size_t *offset);
+        void z5ReadUInt64Subarray(char *path, uint64_t *array, unsigned int ndim, size_t *shape, size_t *offset);
 
         size_t z5GetFileSize(char *path);
 
